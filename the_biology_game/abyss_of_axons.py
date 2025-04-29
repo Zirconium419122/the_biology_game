@@ -6,7 +6,7 @@ def adventure():
     print("You fall down from the sky and landed on a circular island next to a chasm.")
     time.sleep(1)
     print("You have landed in the Abyss of Axons.")
-    """time.sleep(1)
+    time.sleep(1)
     print("You look over the edge and can only see black down into the chasm.")
     time.sleep(1)
     print("It looks like an infinite drop, but it is impossible to tell.")
@@ -14,7 +14,7 @@ def adventure():
     print("You look around, it is completely flat and the Island is around 50 meters in radius.")
     time.sleep(1)
     print("You look into the distance and see the tornado coming fast.")
-    time.sleep(1)"""
+    time.sleep(1)
     return first_challenge()
 
 def first_challenge():
@@ -25,7 +25,7 @@ def first_challenge():
 
     if choice == "1":
         print("You choose to stay on top of the island and look around.")
-        """time.sleep(1)
+        time.sleep(1)
         print("There is absolutely no cover that you can see.")
         time.sleep(1)
         print("It hits you and drags you around and around before you get flung out the side of it.")
@@ -33,12 +33,12 @@ def first_challenge():
         print("You look towards the tornado, it grows and grows the closer it gets.")
         time.sleep(1)
         print("It gets closer and you brace for impact.")
-        time.sleep(1)"""
+        time.sleep(1)
         player.hp -= 100
         print(f"You now have {player.hp} HP.")
 
     elif choice == "2":
-        """print("You jump down into the abyss.")
+        print("You jump down into the abyss.")
         time.sleep(1)
         print("You fall faster and faster.")
         time.sleep(1)
@@ -57,7 +57,7 @@ def first_challenge():
         print(f"You have hit the bottom of the abyss unscathed {player.name}!")
         time.sleep(1)
         print("Congratulations adventurer, you have passed your first test.")
-        time.sleep(1)"""
+        time.sleep(1)
         return second_challenge_text()
 
     else:
@@ -82,8 +82,12 @@ def second_challenge():
     choice = input("Do you want to [1] help the old man or [2] not today? ")
 
     if choice == "2":
-        print("\"A curse has fallen upon you,\" the old man yells. Suddenly, lightning strikes you. Are you sure of your decision?")
+        print("\"A curse has fallen upon you,\" the old man yells. Suddenly, lightning strikes you.")
         player.hp -= 30
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
+        print("Are you sure of your decision")
         print(f"You now have {player.hp} HP, but must still complete the task.")
         return second_challenge()
 
@@ -169,6 +173,10 @@ def fifth_challenge():
     elif choice == "3":
         print("\"A great curse shall fall upon you and your family!\" The old man screams. Immediately a big rock falls down on your left arm so you lose it, you were lucky it was not your dominant.")
         player.hp -= 50
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
+        print(f"Now you have {player.hp} HP left, so...")
         return fifth_challenge()
 
     else:
