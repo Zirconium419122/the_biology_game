@@ -234,6 +234,10 @@ def sixth_challenge():
         print("The place is crawling with crabs (literally), who storm you and cut you into pieces.")
         input()
         print("Rest in piece.")
+        player.hp -= 125
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
 
     else:
         print("Invalid input, please check your spelling and try again.")
@@ -277,7 +281,7 @@ def eighth_challenge():
 
     elif choice == "2":
         print("The flood drowns you and the Sorcerer together.")
-        player.hp -=100
+        player.hp -=125
         if player.hp <= 0:
             print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
             exit()
