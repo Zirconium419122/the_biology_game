@@ -15,7 +15,7 @@ def adventure():
     time.sleep(1)
     print("You look into the distance and see the tornado coming fast.")
     time.sleep(1)
-    """return first_challenge()
+    return first_challenge()
 
 def first_challenge():
     print(f"You are left with the decision, {player.name}")
@@ -28,11 +28,11 @@ def first_challenge():
         time.sleep(1)
         print("There is absolutely no cover that you can see.")
         time.sleep(1)
-        print("It hits you and drags you around and around before you get flung out the side of it.")
-        time.sleep(1)
         print("You look towards the tornado, it grows and grows the closer it gets.")
         time.sleep(1)
         print("It gets closer and you brace for impact.")
+        time.sleep(1)
+        print("It hits you and drags you around and around before you get flung out the side of it.")
         time.sleep(1)
         player.hp -= 100
         print(f"You now have {player.hp} HP.")
@@ -413,4 +413,4 @@ def twelfth_challenge():
 
     else:
         print("Invalid input, please check your spelling and try again.")
-        return twelfth_challenge()"""
+        return twelfth_challenge()
