@@ -7,13 +7,13 @@ import time
 # from the_biology_game.player import inventory
 
 player.name = input("Adventurer, please enter your name: ")
-print(f"Welcome, {player.name}, you find yourself high in the sky, in the Flying Islets of Langerhans, the land of vicious flying dragons with {player.hp} HP.")
+print(f"Welcome, {player.name}, you find yourself high in the sky, in the Flying Islets of Langerhans, the land of flying dragons with {player.hp} HP.")
 """time.sleep(8)
 print("There is a lot you need to learn about these worlds.")
 time.sleep(4)
 print("Yes, you heard me correctly, worlds.")
 time.sleep(4)
-print("There are multiple worlds here and you need to enter every single one of them and collect an item in each world.")
+print("There are multiple worlds here and you need to enter every single one of them and collect an item in each world to defeat the Supreme Sorcerer.")
 time.sleep(7)
 print("To get into these different worlds, you need to go into different portals.")
 time.sleep(5)
@@ -62,7 +62,12 @@ if player.hp <= 0:
     # Possibly redundant or problematic?
     exit()
 
-if "Neuron Crystal" in player.inventory and "Bioluminescent Pearl" in player.inventory:
+# When the supreme sorcerer is defeated
+print("As you pass pass through the portal, the crystal and pearl start glowing. Then they turn into a powerful sword and a pair of boots.")
+print("The sword is magical, being able to absorb and reflect spells. The boots on the other hand give you the ability to fly.")
+player.inventory.append("The Shield of Peace")
+
+if "Neuron Crystal" in player.inventory and "Bioluminescent Pearl" in player.inventory and "The Shield of Peace" in player.inventory:
     print(f"Congratulations {player.name}, you have won the game!")
     exit()
 
