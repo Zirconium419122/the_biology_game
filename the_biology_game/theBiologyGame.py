@@ -62,3 +62,7 @@ if player.hp <= 0:
     # Possibly redundant or problematic?
     exit()
 
+if "Neuron Crystal" in player.inventory and "Bioluminescent Pearl" in player.inventory:
+    print(f"Congratulations {player.name}, you have won the game!")
+    exit()
+
