@@ -8,34 +8,37 @@ import time
 
 player.name = input("Adventurer, please enter your name: ")
 print(f"Welcome, {player.name}, you find yourself high in the sky, in the Flying Islets of Langerhans, the land of vicious flying dragons with {player.hp} HP.")
-time.sleep(8)
+input()
 print("There is a lot you need to learn about these worlds.")
-time.sleep(4)
+input()
 print("Yes, you heard me correctly, worlds.")
-time.sleep(4)
+input()
 print("There are multiple worlds here and you need to enter every single one of them and collect an item in each world to defeat the Supreme Sorcerer.")
-time.sleep(7)
+input()
 print("He is currently manipulating the thoughts of the dragons in these lands, making them friendly towards him but hostile towards all else.") 
-time.sleep(8)
+input()
 print("To get into these different worlds, you need to go into different portals.")
-time.sleep(5)
+input()
 print("There is a slight problem with these worlds however.")
-time.sleep(5)
+input()
 print("There are extreme natural disasters, and this is also how the worlds are connected.")
-time.sleep(6)
+input()
 print("Every world has the same disasters at the same time.")
-time.sleep(5)
+input()
 print("That is why you need to dodge the disasters in worlds where they can't hurt you and still visit all the worlds.")
-time.sleep(8)
+input()
 print("Right now there is a storm coming, a tornado, and you need to find a safe space.")
-time.sleep(6)
+input()
 
 choice = input("Do you want to go into portal [1] The Endless Sea of Cnidaria, [2] The Abyss of Axons or [3] Pyrexia, the Land of Fire? ")
 
 if choice == "1":
     print("You fall down into a huge ocean and  see the tornado coming closer, ready to destroy anything in its path.")
-    print("The tornado comes gets closer and closer...")
+    input()
+    print("The tornado comes closer and closer...")
+    input()
     print("And you instantly die from its winds.")
+    input()
     player.hp -= 100
 
 if choice == "2":
@@ -54,9 +57,13 @@ if "Neuron Crystal" in player.inventory:
 
 if choice == "3":
     print("You suddenly stand in a world full of fire and lava.")
+    input()
     print("You see the tornado coming closer, it is a fire tornado.")
+    input()
     print("There is no cover in sight.")
+    input()
     print("You instantly die from scorching heat.")
+    input()
     player.hp -= 100
 
 if player.hp <= 0:
@@ -66,9 +73,13 @@ if player.hp <= 0:
 
 # When the supreme sorcerer is defeated
 print("As you pass pass through the portal, the crystal and pearl start glowing. Then they turn into a powerful sword and a pair of boots.")
+input()
 print("The sword is magical, being able to absorb and reflect spells. The boots on the other hand give you the ability to fly.")
+input()
 print("You must now utilise these items to defeat the Supreme Sorcerer.")
+input()
 print("But beware adventurer, he is the most powerful creature in these lands. Therefore you must sneak up on him and trick him like his apprentice once did to you.")
+input()
 
 def first_challenge():
     print("Which disguise will you use?")
@@ -77,7 +88,9 @@ def first_challenge():
 
     if choice == "1":
         print("What did you think was going to happen you moron?")
+        input()
         print("The sourcerers capture you and use you for wand practice.")
+        input()
         player.hp -= 100
 
     elif choice == "2":
@@ -86,17 +99,24 @@ def first_challenge():
 
     elif choice == "3":
         print("You sneak up behind him as one of his apprentices.")
+        input()
         print("\"Put that potion over there, will you?\" He says.")
+        input()
         print("You stab the Supreme Sorcerer in the back killing him.")
+        input()
         print("Your sword absorbs all his power.")
+        input()
         print("His underlings come to his rescue, but stand no chance against you.")
+        input()
         print("You receive The Shield of Peace.")
+        input()
         player.inventory.append("The Shield of Peace")
 
 first_challenge()
 
 if "Neuron Crystal" in player.inventory and "Bioluminescent Pearl" in player.inventory and "The Shield of Peace" in player.inventory:
     print(f"Congratulations {player.name}, you have established peace in these lands and have won the game!")
+    input()
     print("Good job adventurer, you are not a moron.")
     exit()
 
