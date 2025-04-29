@@ -17,6 +17,7 @@ def first_challenge():
 
     if choice == "1":
         print("You successfully build a raft.")
+        return second_challenge()
 
     elif choice == "2":
         print("You try your best to build a mansion.")
@@ -56,8 +57,12 @@ def second_challenge():
         print("You arrive at the great island before it has turned dark, but you are tired.")
         time.sleep(1)
         return third_challenge_path_2()
+    
+    else:
+        print("Invalid input, please check your spelling and try again.")
+        return second_challenge()
 
-!!!!!!!!
+
 def third_challenge_path_1():
     print("Where do you want to sleep?")
     time.sleep(1)
@@ -70,10 +75,14 @@ def third_challenge_path_1():
         time.sleep(1)
         print("A giant shark swooped out of nowhere and killed you.")
         player.hp -= 100
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
 
     elif choice == "2":
         print("You managed to sleep well in the tree and nothing bad happened during the night.")
         time.sleep(1)
+        return fourth_challenge_path_1()
 
     elif choice == "3":
         print("During the night you felt a sharp pain in your right arm.")
@@ -82,6 +91,13 @@ def third_challenge_path_1():
         time.sleep(1)
         print("Rest in piece.")
         player.hp -= 100
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
+
+    else:
+        print("Invalid input, please check your spelling and try again.")
+        return third_challenge_path_1()
 
 
 def third_challenge_path_2():
@@ -89,12 +105,14 @@ def third_challenge_path_2():
     time.sleep(1)
     print("You check in the trees and find no animals living in them.")
     time.sleep(1)
-    print("You have a place to sleep, now what do you want to do until it becomes dark")
+    print("You have a place to sleep, now what do you want to do until it becomes dark?")
     time.sleep(1)
-    choice = input("[1] Collect leaves to make the sleeping area more comfortable or [2] explore further into the island. ")
+    
+    choice = input("[1] Collect leaves to make the sleeping area more comfortable or [2] explore further into the island? ")
 
     if choice == "1":
         print("You got an excellent sleep, but you are still a bit tired.")
+        return fourth_challenge_path_2()
 
     elif choice == "2":
         print("You explore further into the heart of the island.")
@@ -114,6 +132,10 @@ def third_challenge_path_2():
             print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
             exit()
         return fourth_challenge_path_2()
+    
+    else:
+        print("Invalid input, please check your spelling and try again.")
+        return third_challenge_path_2()
 
 
 def fourth_challenge_path_1():
@@ -127,22 +149,20 @@ def fourth_challenge_path_1():
     time.sleep(1)
     print("You want to go to the laboratory to see if you can find some clues about what this world is.")
     time.sleep(1)
-    print("You walk down the mountain.")
-    time.sleep(1)
-    print("You decide to rest before you go to the middle of the island.")
+    print("You walk down the mountain, but decide to rest before going to the middle of the island.")
     time.sleep(1)
     player.hp += 25
     return fifth_challenge_path_1()
 
 
 def fourth_challenge_path_2():
-    print("You look around and see a mountain.")
+    print("You start exploring and see a mountain.")
     time.sleep(1)
     print("You want to see the entire island from a safer distance, so you climb up.")
     time.sleep(1)
     print("You see a couple of fields which have no trees, and you see creatures moving there.")
     time.sleep(1)
-    print("After seeing the warthogs, you want to not enter these areas.")
+    print("After the encounter with the warthogs, you want to not enter these areas.")
     time.sleep(1)
     print("In the middle of the island you can spot a laboratory.")
     time.sleep(1)
@@ -154,25 +174,90 @@ def fourth_challenge_path_2():
     if player.hp <= 0:
         print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
         exit()
-    print("You want to get some rest before going to the middle of the island.")
-    time.sleep(1)
-    print("You go back to your bed and go to sleep.")
+    print("You get some rest before going to the middle of the island.")
     time.sleep(1)
     player.hp += 25
     return fifth_challenge_path_2()
 
+def fifth_challenge_path_1():
+    print("After resting you are met with two paths to your destination, one going through the grass fields while the other goes through a forest.")
+    time.sleep(1)
 
-#first path will get the question to go through the grass field or go through the forest. grass field = death bc warthog and if through forest they reach lab
-#second path dodges the field and reaches the lab
-#after the two lines above they go into the same path at last
-#choice to be made, go through door or window
-#If door the crabs storm out at you, rest in piece. If through window you land on top of a kitchen counter unscathed
-#you see a circular water tank in the middle of the room.
-#In the water tank you see a glowing crystal/ pearl thingy that looks like something important that you need.
-#There is one problem however, there is alot of crabs, and it looks like they are doing research on the bioluminecent pearl
-#There are tools in the kitchen where you stand. Scizzor, sledgehammer and knife
-#Destroy water tank and get pearl. sledgehammer is of course correct
-#Run away from the crabs
-#The crabs are less heat resistant than you.
-#The pearl makes it cooler around you.
+    choice = input("Do you [1] go through the grass field or [2] go through the forest? ")
 
+    if choice == "1":
+        print("In the tall grass you suddenly encounter a warthog, killing you on sight.")
+        player.hp -= 100
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
+
+    elif choice == "2":
+        print("You go through the forest and reach the laboratory successfully, also avoiding the crabs, good job.")
+        return sixth_challenge()
+    
+def fifth_challenge_path_2():
+    print("Avoiding the open fields (and crabs everywhere), you reach the laboratory successfully.")
+    time.sleep(1)
+    return sixth_challenge()
+
+def sixth_challenge():
+
+    choice = input("Do you wish to enter [1] through the window or [2] through the door? ")
+                   
+    if choice == "1":
+        print("You jump through the window, landing on top of a kitchen counter, but see tons of crabs crawling on the floor.")
+        return seventh_challenge()
+
+    elif choice == "2":
+        print("The place is crawling with crabs (literally), who storm you and cut you into pieces.")
+        time.sleep(1)
+        print("Rest in piece.")
+
+    else:
+        print("Invalid input, please check your spelling and try again.")
+        return sixth_challenge()
+
+
+def seventh_challenge():
+    print("You spot a circular water tank in the middle of the room. It contains a glowing pearl, seemingly important.")
+    time.sleep(1)
+    print("The crabs seem to be doing research on the pearl. To obtain it you may use one of two tools.")
+
+    choice = input("[1] using a sledgehammer to obtain the pearl then making a run for it or [2] using a knife to defeat the crabs then open the tank. ")
+
+    if choice == "1":
+        print(f"You break the glass, take the pearl and get out of there as fast as possible. Good job {player.name}, you have obtained the Bioluminescent Pearl.")
+        time.sleep(1)
+        print("The crabs are unable to follow due to the great heat, but the Bioluminescent Pearl cools the air around you.")
+        return eighth_challenge()
+
+    elif choice == "2":
+        print("You try to kill the crabs, but there are simply too many. What a moron.")
+        player.hp -= 200
+
+    else:
+        print("Invalid input, please check your spelling and try again.")
+        return seventh_challenge()
+
+def eighth_challenge():
+    print("You spot a flood in the distance, and in front of you there are three portals. Where d you go now?")
+
+    choice = input("[1] back to the Islets of Langerhans, [2] back to the abyss of axons or [3] to Pyrexia, the land of fire? ")
+
+    if choice == "1":
+        print("The dragons eat you alive as you are not new, nor have you obtained the three items.")
+
+    elif choice == "2":
+        print("The flood drowns you and the Sorcerer together.")
+        player.hp -=100
+        if player.hp <= 0:
+            print(f"💀{player.name}, you lost all your HP and have been defeated.💀")
+            exit()
+
+    elif choice == "3":
+        print("A wise choice.")
+
+    else:
+        print("Invalid input, please check your spelling and try again.")
+        return eihth_challenge()

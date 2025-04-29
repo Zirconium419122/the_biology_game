@@ -2,12 +2,13 @@ import abyss_of_axons
 import endless_sea_of_cnidaria
 import pyrexia_land_of_fire
 import player
+import time
 # Redundant code that is kept just in case...
 # from the_biology_game.player import inventory
 
 player.name = input("Adventurer, please enter your name: ")
 print(f"Welcome, {player.name}, you find yourself high in the sky, in the Flying Islets of Langerhans, the land of vicious flying dragons with {player.hp} HP.")
-time.sleep(8)
+"""time.sleep(8)
 print("There is a lot you need to learn about these worlds.")
 time.sleep(4)
 print("Yes, you heard me correctly, worlds.")
@@ -24,8 +25,8 @@ print("Every world has the same disasters at the same time.")
 time.sleep(5)
 print("That is why you need to dodge the disasters in worlds where they can't hurt you and still visit all the worlds.")
 time.sleep(8)
-print("Right now there is a storm coming, a tornado, and you need to find a safe space")
-time.sleep(6)
+print("Right now there is a storm coming, a tornado, and you need to find a safe space.")
+time.sleep(6)"""
 
 choice = input("Do you want to go into portal [1] The Endless Sea of Cnidaria, [2] The Abyss of Axons or [3] Pyrexia, the Land of Fire? ")
 
