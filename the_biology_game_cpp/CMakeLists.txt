@@ -1,15 +1,18 @@
 ﻿cmake_minimum_required(VERSION 3.10)
 
-# Set the project name and version
-project(the_biology_game_cpp VERSION 0.0)
+# Project info
+project(the_biology_game_cpp VERSION 1.0)
 
-# Specify the C++ standard
+# C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Add all .cpp files in the src directory
+# Collect source and header files
 file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE HEADERS "src/*.h")
 
-# Define the executable
-add_executable(the_biology_game_cpp ${SOURCES})
+# Include src/ directory so headers can be found
+include_directories(src)
 
+# Define the executable (including headers for IDEs)
+add_executable(the_biology_game_cpp ${SOURCES} ${HEADERS})
